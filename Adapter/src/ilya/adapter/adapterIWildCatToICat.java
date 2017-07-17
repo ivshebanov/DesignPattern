@@ -12,6 +12,11 @@ public class adapterIWildCatToICat implements ICat{
     }
 
     @Override
+    public String getName() {
+        return iWildCats.getName();
+    }
+
+    @Override
     public void meow() {
         iWildCats.growl();
     }

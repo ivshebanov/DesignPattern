@@ -3,6 +3,12 @@ package ilya.cat;
 import ilya.iCat.ICat;
 
 public class StreetCat implements ICat {
+    private String name = "Василий";
+
+    @Override
+    public String getName() {
+        return name;
+    }
 
     @Override
     public void meow() {
