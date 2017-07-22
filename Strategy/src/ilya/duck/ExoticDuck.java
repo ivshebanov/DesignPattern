@@ -5,7 +5,7 @@ import ilya.iQuackDuck.ExoticQuack;
 public class ExoticDuck extends DuckBase {
 
     public ExoticDuck() {
-        quack = new ExoticQuack();
+        this.setQuack(new ExoticQuack());
     }
 
     @Override

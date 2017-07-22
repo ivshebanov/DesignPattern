@@ -5,7 +5,7 @@ import ilya.iFlyDuck.NotFly;
 public class RubberDuck extends DuckBase {
 
     public RubberDuck() {
-        fly = new NotFly();
+        this.setFly(new NotFly());
     }
 
     @Override

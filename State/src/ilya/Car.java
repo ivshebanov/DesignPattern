@@ -4,12 +4,11 @@ import ilya.states.*;
 
 public class Car {
 
-    private boolean driverCar;
     private EmptyTankState emptyTankState;
     private EngingStartedState engingStartedState;
     private DrivingState drivingState;
     private FullTankState fullTankState;
-    private int gasolin;
+    private int gasoline;
     private iState state;
 
     public Car() {
@@ -18,12 +17,11 @@ public class Car {
         this.drivingState = new DrivingState(this);
         this.fullTankState = new FullTankState(this);
         this.state = emptyTankState;
-        this.gasolin = 0;
-        this.driverCar = true;
+        this.gasoline = 0;
     }
 
     public void fullTank() {
-        gasolin = 50;
+        gasoline = 50;
         state.fullTank();
     }
 
@@ -33,19 +31,11 @@ public class Car {
 
     public void driver() {
         state.driver();
-        gasolin -= 10;
+        gasoline -= 10;
     }
 
     public void stop() {
         state.stop();
-    }
-
-    public boolean isDriverCar() {
-        return driverCar;
-    }
-
-    public void setDriverCar(boolean driverCar) {
-        this.driverCar = driverCar;
     }
 
     public EmptyTankState getEmptyTankState() {
@@ -80,12 +70,12 @@ public class Car {
         this.fullTankState = fullTankState;
     }
 
-    public int getGasolin() {
-        return gasolin;
+    public int getGasoline() {
+        return gasoline;
     }
 
-    public void setGasolin(int gasolin) {
-        this.gasolin = gasolin;
+    public void setGasoline(int gasoline) {
+        this.gasoline = gasoline;
     }
 
     public iState getState() {

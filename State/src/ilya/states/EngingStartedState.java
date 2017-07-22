@@ -23,7 +23,7 @@ public class EngingStartedState implements iState {
     @Override
     public void fullTank() {
         System.out.print("нельзя заправдяться с работающим двигателем, бак заполнен на: ");
-        System.out.println(car.getGasolin());
+        System.out.println(car.getGasoline());
     }
 
     @Override
@@ -33,7 +33,7 @@ public class EngingStartedState implements iState {
     }
 
     private void tryDrive() {
-        if (car.getGasolin() >= 10) {
+        if (car.getGasoline() >= 10) {
             car.setState(car.getDrivingState());
             System.out.println("поехали");
         } else {

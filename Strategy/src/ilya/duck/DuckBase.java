@@ -6,20 +6,12 @@ import ilya.iQuackDuck.Quack;
 import ilya.iQuackDuck.iQuack;
 
 public abstract class DuckBase {
-    iFly fly;
-    iQuack quack;
+    private iFly fly;
+    private iQuack quack;
 
     DuckBase() {
         this.fly = new Fly();
         this.quack = new Quack();
-    }
-
-    public void setFly(iFly fly) {
-        this.fly = fly;
-    }
-
-    public void setQuack(iQuack quack) {
-        this.quack = quack;
     }
 
     public abstract void dysplay();
@@ -34,5 +26,21 @@ public abstract class DuckBase {
 
     public void quack() {
         quack.Quack();
+    }
+
+    public iFly getFly() {
+        return fly;
+    }
+
+    public void setFly(iFly fly) {
+        this.fly = fly;
+    }
+
+    public iQuack getQuack() {
+        return quack;
+    }
+
+    public void setQuack(iQuack quack) {
+        this.quack = quack;
     }
 }

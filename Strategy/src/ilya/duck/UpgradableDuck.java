@@ -6,8 +6,8 @@ import ilya.iQuackDuck.NotQuack;
 public class UpgradableDuck extends DuckBase {
 
     public UpgradableDuck() {
-        fly = new NotFly();
-        quack = new NotQuack();
+        this.setQuack(new NotQuack());
+        this.setFly(new NotFly());
     }
 
     @Override

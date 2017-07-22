@@ -18,7 +18,6 @@ public class Main {
         car.stop();
         car.turnKey();
         car.fullTank();
-        System.out.println(car.getGasolin());
+        System.out.println(car.getGasoline());
     }
 }
-  

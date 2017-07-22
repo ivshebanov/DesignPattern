@@ -24,7 +24,7 @@ public class DrivingState implements iState {
     @Override
     public void fullTank() {
         System.out.print("нельзя заправляться во время движения, уровень бензина: ");
-        System.out.println(car.getGasolin());
+        System.out.println(car.getGasoline());
     }
 
     @Override
@@ -33,7 +33,7 @@ public class DrivingState implements iState {
     }
 
     private void tryDrive() {
-        if (car.getGasolin() >= 10) {
+        if (car.getGasoline() >= 10) {
             System.out.println("поехали");
         } else {
             car.setState(car.getEmptyTankState());
