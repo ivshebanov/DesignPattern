@@ -28,7 +28,8 @@ public class FullTankState implements iState {
 
     @Override
     public void turnKey() {
-        car.setState(car.getEngingStartedState());
+//        car.setState(car.getEngingStartedState());
+        car.setState(new EngingStartedState(car));
         System.out.println("Двигатель запущен, дрын дын дын дын");
     }
 }

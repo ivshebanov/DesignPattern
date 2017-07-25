@@ -17,7 +17,8 @@ public class DrivingState implements iState {
 
     @Override
     public void stop() {
-        car.setState(car.getEngingStartedState());
+//        car.setState(car.getEngingStartedState());
+        car.setState(new EngingStartedState(car));
         System.out.println("остновился");
     }
 
@@ -36,7 +37,8 @@ public class DrivingState implements iState {
         if (car.getGasoline() >= 10) {
             System.out.println("поехали");
         } else {
-            car.setState(car.getEmptyTankState());
+//            car.setState(car.getEmptyTankState());
+            car.setState(new EmptyTankState(car));
             System.out.println("бензин закончился");
         }
     }

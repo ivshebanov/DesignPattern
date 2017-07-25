@@ -6,18 +6,18 @@ public class Main {
         Car car = new Car();
         car.fullTank();
         car.turnKey();
+        car.turnKey();
+        car.turnKey();
         car.driver();
-        car.driver();
-        car.driver();
-        car.driver();
-        car.driver();
-        car.driver();
-        car.driver();
-        car.driver();
+        car.turnKey();
+        car.stop();
+        car.turnKey();
+        car.turnKey();
         car.driver();
         car.stop();
         car.turnKey();
-        car.fullTank();
-        System.out.println(car.getGasoline());
+        car.setGasoline(0);
+        car.turnKey();
+        car.driver();
     }
 }

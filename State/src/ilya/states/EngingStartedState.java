@@ -28,16 +28,19 @@ public class EngingStartedState implements iState {
 
     @Override
     public void turnKey() {
-        car.setState(car.getFullTankState());
+//        car.setState(car.getFullTankState());
+        car.setState(new FullTankState(car));
         System.out.println("заглушил");
     }
 
     private void tryDrive() {
         if (car.getGasoline() >= 10) {
-            car.setState(car.getDrivingState());
+//            car.setState(car.getDrivingState());
+            car.setState(new DrivingState(car));
             System.out.println("поехали");
         } else {
-            car.setState(car.getEmptyTankState());
+//            car.setState(car.getEmptyTankState());
+            car.setState(new EmptyTankState(car));
             System.out.println("бензин закончился");
         }
     }

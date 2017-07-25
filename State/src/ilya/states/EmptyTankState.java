@@ -23,7 +23,8 @@ public class EmptyTankState implements iState {
     @Override
     public void fullTank() {
         System.out.println("заправил полный бак");
-        car.setState(car.getFullTankState());
+//        car.setState(car.getFullTankState());
+        car.setState(new FullTankState(car));
     }
 
     @Override
