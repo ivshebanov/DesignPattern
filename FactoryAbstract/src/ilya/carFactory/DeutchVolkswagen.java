@@ -8,7 +8,12 @@ public class DeutchVolkswagen extends Volkswagen {
     @Override
     public Car getCar(String type) {
         CarPartFactory carPartFactory = new DeutchCarPartFactory();
-        Car car = null;
+        Car car = new Car() {
+            @Override
+            public void configure() {
+                super.configure();
+            }
+        };
         if (type.equals("Golf")) {
             car = new Golf(carPartFactory);
         } else if (type.equals("Passat")) {

@@ -5,8 +5,8 @@ import ilya.parts.print.Print;
 import ilya.parts.wheels.Wheels;
 
 public abstract class Car {
-    protected String name;
-    protected String body;
+    protected String name = "";
+    protected String body = "";
     protected Engine engine;
     protected Print print;
     protected Wheels wheels;

@@ -10,15 +10,22 @@ public class RussianVolkswagen extends Volkswagen {
     public Car getCar(String type) {
         CarPartFactory carPartFactory = new RussianCarPartFactory();
 
+        Car car = new Car() {
+            @Override
+            public void configure() {
+                super.configure();
+            }
+        };
         if (type.equals("Golf")) {
-            return new Golf(carPartFactory);
+            car = new Golf(carPartFactory);
         } else if (type.equals("Passat")) {
-            return new Passat(carPartFactory);
+            car = new Passat(carPartFactory);
         } else if (type.equals("Tiguan")) {
-            return new Tiguan(carPartFactory);
+            car = new Tiguan(carPartFactory);
         } else if (type.equals("Touareg")) {
-            return new Touareg(carPartFactory);
+            car = new Touareg(carPartFactory);
         }
-        return null;
+        car.configure();
+        return car;
     }
 }
