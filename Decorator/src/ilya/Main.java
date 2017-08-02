@@ -14,7 +14,7 @@ public class Main {
         BaverageBase baverageBase = new Sugar(new Cinnamon(new Milk(new Coffe())));
         System.out.format("Ваш заказ: %s %nЦена: %d %n", baverageBase.getDiscription(), baverageBase.getPrice());
 
-        BaverageBase baverageBase1 = new Sugar(new Syrup(new Tee()));
+        BaverageBase baverageBase1 = new Sugar(new Sugar(new Syrup(new Tee())));
         System.out.format("Ваш заказ: %s %nЦена: %d %n", baverageBase1.getDiscription(), baverageBase1.getPrice());
     }
 }

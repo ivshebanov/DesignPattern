@@ -2,7 +2,7 @@ package ilya.baseBaverage;
 
 public class Coffe extends BaverageBase {
 
-    public Coffe() {
+    public Coffe( ) {
         discription = "Черный кофе";
     }
 
