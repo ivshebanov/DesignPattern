@@ -15,6 +15,7 @@ public class Main {
         duck.add(new ExoticDuck());
         duck.add(new RubberDuck());
         duck.add(new WoodenDuck());
+        duck.add(new UpgradableDuck());
 
         for (DuckBase dB : duck) {
             dB.dysplay();
@@ -25,11 +26,6 @@ public class Main {
         }
 
         DuckBase ubgrDuck = new UpgradableDuck();
-        ubgrDuck.dysplay();
-        ubgrDuck.swim();
-        ubgrDuck.quack();
-        ubgrDuck.fly();
-
         ubgrDuck.setFly(new Fly());
         ubgrDuck.setQuack(new ExoticQuack());
         ubgrDuck.fly();
