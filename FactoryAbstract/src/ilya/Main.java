@@ -1,5 +1,6 @@
 package ilya;
 
+import ilya.car.Car;
 import ilya.carFactory.DeutchVolkswagen;
 import ilya.carFactory.RussianVolkswagen;
 import ilya.carFactory.Volkswagen;
@@ -8,7 +9,7 @@ public class Main {
 
     public static void main(String[] args) {
         Volkswagen volkswagen = new RussianVolkswagen();
-        volkswagen.getCar("Golf");
+        Car car = volkswagen.getCar("Golf");
         volkswagen.getCar("Passat");
         volkswagen.getCar("Tiguan");
         volkswagen.getCar("Touareg");
