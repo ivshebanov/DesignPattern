@@ -15,6 +15,5 @@ public abstract class Volkswagen {
         return car;
     }
 
-
     protected abstract Car createCar(String type);
 }
