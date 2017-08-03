@@ -2,18 +2,15 @@ package ilya.parts.partBasic;
 
 import ilya.parts.Parts;
 
-public abstract class TerritoriallyParts {
+public abstract class PartsBasic {
 
     public static Parts getJeepCarPart() {
-        return JeepCarPart.getObj().createPart();
+        return JeepCarPart.getJeepPart().createPart();
     }
 
     public static Parts getSportCarPart() {
-        return JeepCarPart.getObj().createPart();
+        return SportCarPart.getSportPart().createPart();
     }
 
-    public Parts getParts(){
-        return createPart();
-    }
     protected abstract Parts createPart();
 }

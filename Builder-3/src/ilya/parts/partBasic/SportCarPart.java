@@ -7,9 +7,13 @@ import ilya.parts.engine.LowVolumeEngine;
 import ilya.parts.print.RadPrint;
 import ilya.parts.wheels.BigWheels;
 
-public class SportCarPart extends TerritoriallyParts {
+public class SportCarPart extends PartsBasic {
 
     private SportCarPart() {}
+
+    protected static PartsBasic getSportPart() {
+        return new SportCarPart();
+    }
 
     @Override
     protected Parts createPart() {
@@ -19,9 +23,5 @@ public class SportCarPart extends TerritoriallyParts {
         patrsBuilder.setWheels(new BigWheels());
         patrsBuilder.setPrint(new RadPrint());
         return patrsBuilder.getParts();
-    }
-
-    protected static TerritoriallyParts getObj() {
-        return new SportCarPart();
     }
 }

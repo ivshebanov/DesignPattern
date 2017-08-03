@@ -7,9 +7,13 @@ import ilya.parts.engine.LargeVolumeEngine;
 import ilya.parts.print.BluePrint;
 import ilya.parts.wheels.SmallWheels;
 
-public class JeepCarPart extends TerritoriallyParts {
+public class JeepCarPart extends PartsBasic {
 
     private JeepCarPart() {}
+
+    protected static PartsBasic getJeepPart() {
+        return new JeepCarPart();
+    }
 
     @Override
     protected Parts createPart() {
@@ -19,9 +23,5 @@ public class JeepCarPart extends TerritoriallyParts {
         patrsBuilder.setWheels(new SmallWheels());
         patrsBuilder.setPrint(new BluePrint());
         return patrsBuilder.getParts();
-    }
-
-    protected static TerritoriallyParts getObj() {
-        return new JeepCarPart();
     }
 }
