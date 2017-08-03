@@ -6,21 +6,28 @@ import ilya.car.dutchCar.DutchPassat;
 import ilya.car.dutchCar.DutchTiguan;
 import ilya.car.dutchCar.DutchTuareg;
 
-public class DutchVolkswagen extends Volkswagen{
+public class DutchVolkswagen extends Volkswagen {
+
+    private DutchVolkswagen() {
+    }
+
+    public static DutchVolkswagen getDutchVolkswagen() {
+        return new DutchVolkswagen();
+    }
 
     @Override
-    public Car createCar(String type) {
-        Car car = new Car();
-
-        if (type.equals("Golf")) {
-            car = new DutchGolf();
-        } else if (type.equals("Passat")) {
-            car = new DutchPassat();
-        } else if (type.equals("Tiguan")) {
-            car = new DutchTiguan();
-        } else if (type.equals("Tuareg")) {
-            car = new DutchTuareg();
+    protected Car createCar(String type) {
+        switch (type) {
+            case "Golf":
+                return new DutchGolf();
+            case "Passat":
+                return new DutchPassat();
+            case "Tiguan":
+                return new DutchTiguan();
+            case "Tuareg":
+                return new DutchTuareg();
+            default:
+                return null;
         }
-        return car;
     }
 }

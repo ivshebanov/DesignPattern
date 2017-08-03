@@ -8,19 +8,26 @@ import ilya.car.russianCar.RussianTuareg;
 
 public class RussianVolkswagen extends Volkswagen {
 
-    @Override
-    public Car createCar(String type) {
-        Car car = new Car();
+    private RussianVolkswagen() {
+    }
 
-        if (type.equals("Golf")) {
-            car = new RussianGolf();
-        } else if (type.equals("Passat")) {
-            car = new RussianPassat();
-        } else if (type.equals("Tiguan")) {
-            car = new RussianTiguan();
-        } else if (type.equals("Tuareg")) {
-            car = new RussianTuareg();
+    public static RussianVolkswagen getRussianVolkswagen() {
+        return new RussianVolkswagen();
+    }
+
+    @Override
+    protected Car createCar(String type) {
+        switch (type) {
+            case "Golf":
+                return new RussianGolf();
+            case "Passat":
+                return new RussianPassat();
+            case "Tiguan":
+                return new RussianTiguan();
+            case "Tuareg":
+                return new RussianTuareg();
+            default:
+                return null;
         }
-        return car;
     }
 }
