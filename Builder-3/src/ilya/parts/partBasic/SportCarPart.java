@@ -17,11 +17,6 @@ public class SportCarPart extends PartsBasic {
 
     @Override
     protected Parts createPart() {
-        PartsBuilder patrsBuilder = PartsBuilder.getPartsBuilder();
-        patrsBuilder.setBody(new SedanBody());
-        patrsBuilder.setEngine(new LowVolumeEngine());
-        patrsBuilder.setWheels(new BigWheels());
-        patrsBuilder.setPrint(new RadPrint());
-        return patrsBuilder.getParts();
+        return PartsBuilder.getPartsBuilder().setBody(new SedanBody()).setEngine(new LowVolumeEngine()).setWheels(new BigWheels()).setPrint(new RadPrint()).getParts();
     }
 }

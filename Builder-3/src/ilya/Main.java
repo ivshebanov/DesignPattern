@@ -17,7 +17,6 @@ public class Main {
         Parts Dparts = PartsBasic.getSportCarPart();
         Parts Parts = PartsBuilder.getPartsBuilder().setBody(new CrossoverBody()).setPrint(new BluePrint()).setEngine(new LargeVolumeEngine()).setWheels(new BigWheels()).getParts();
 
-
         Car audi1 = new CarFactory().getCar("Audi", Rparts);
         Car audi2 = new CarFactory().getCar("Audi", Dparts);
         Car audi3 = new CarFactory().getCar("Audi", Parts);
@@ -25,8 +24,5 @@ public class Main {
         Car audi4 = new CarFactory().getCar("Volksvagen", Rparts);
         Car audi5 = new CarFactory().getCar("Volksvagen", Dparts);
         Car audi6 = new CarFactory().getCar("Volksvagen", Parts);
-
-
-
     }
 }

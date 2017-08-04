@@ -36,7 +36,6 @@ public class PartsBuilder {
         return this;
     }
 
-
     public PartsBuilder setBody(Body body) {
         this.body = body;
         return this;

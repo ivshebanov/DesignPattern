@@ -13,6 +13,4 @@ public abstract class Car {
     protected Wheels wheels;
 
     public abstract void getCar();
-
-
 }
