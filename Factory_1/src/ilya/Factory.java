@@ -11,7 +11,7 @@ public class Factory {
     public static Factory getFactory(){
         return new Factory();
     }
-    
+
     //Factory
     public Car getCar(String type){
         switch (type){
