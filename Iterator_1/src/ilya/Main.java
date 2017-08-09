@@ -1,47 +1,72 @@
 package ilya;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
-        ArrayContaner aC = new ArrayContaner();
+        //мой итератор
+        Container<Integer> aC = new ArrayContaner<Integer>();
+        aC.addArr(1);
+        aC.addArr(2);
+        aC.addArr(3);
         Iterator iterator = aC.getIterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
+        
+        //стандартный итератор
+        ArrayList<String> arrayList = new ArrayList<String>();
+        arrayList.add("1q");
+        arrayList.add("1q");
+        arrayList.add("1q");
+        arrayList.add("1q");
+        java.util.Iterator<String> it = arrayList.iterator();
+        while (it.hasNext()){
+            System.out.println(it.next());
+        }
     }
 }
 
-interface Iterator {
+interface Iterator<T> {
     boolean hasNext();
 
-    Object next();
+    T next();
 }
 
-interface Container {
+interface Container<T> {
     Iterator getIterator();
+
+    void addArr(T arr);
+
 }
 
-class ArrayContaner implements Container {
+class ArrayContaner<T> implements Container<T> {
 
-    String[] arr = {"Masha", "Mariya", "Максим"};
+    private ArrayList<T> array = new ArrayList<T>();
 
     @Override
     public Iterator getIterator() {
         return new ArrayIterator();
     }
 
-    class ArrayIterator implements Iterator {
-        int index;
+    @Override
+    public void addArr(T arr) {
+        array.add(arr);
+    }
+
+    class ArrayIterator implements Iterator<T> {
+        private int index;
 
         @Override
         public boolean hasNext() {
-            return arr.length > index;
+            return array.size() > index;
         }
 
         @Override
-        public Object next() {
+        public T next() {
             if (hasNext()) {
-                return arr[index++];
+                return array.get(index++);
             }
             return null;
         }
