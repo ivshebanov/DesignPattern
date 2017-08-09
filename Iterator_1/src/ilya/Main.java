@@ -14,7 +14,7 @@ public class Main {
         while (iterator.hasNext()) {
             System.out.println(iterator.next());
         }
-        
+
         //стандартный итератор
         ArrayList<String> arrayList = new ArrayList<String>();
         arrayList.add("1q");
