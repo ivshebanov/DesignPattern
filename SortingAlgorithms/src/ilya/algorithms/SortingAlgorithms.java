@@ -12,7 +12,7 @@ public abstract class SortingAlgorithms {
 
         long res = stop - start;
         // 1 сек = 10^9 наносек, 10^6 микросек, 10^3 милисек
-        System.out.println(this.getClass().getName() + " - " + res / 1000000);
+        System.out.println(this.getClass().getName() + " - " + res / 1000);
     }
 
     public abstract int[] sort(int[] array);
