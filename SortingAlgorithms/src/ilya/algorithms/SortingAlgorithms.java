@@ -9,8 +9,11 @@ public abstract class SortingAlgorithms {
         int[] arr = this.sort(array);
         long stop = System.nanoTime();
         System.out.println(Arrays.toString(arr));
-        System.out.println(this.getClass().getName() + " - " + (stop - start));
+
+        long res = stop - start;
+        // 1 сек = 10^9 наносек, 10^6 микросек, 10^3 милисек
+        System.out.println(this.getClass().getName() + " - " + res / 1000000);
     }
 
-    abstract int[] sort(int[] array);
+    public abstract int[] sort(int[] array);
 }

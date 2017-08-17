@@ -2,26 +2,25 @@ package ilya.algorithms;
 
 import java.util.Arrays;
 
-public class FastSort extends SortingAlgorithms {
-
+public class QuickSort extends SortingAlgorithms {
     private static int[] array;
 
     @Override
     public int[] sort(int[] array) {
-        FastSort.array = Arrays.copyOf(array, array.length);
-        fastSort(0, FastSort.array.length - 1);
-        return FastSort.array;
+        QuickSort.array = Arrays.copyOf(array, array.length);
+        quickSort(0, QuickSort.array.length - 1);
+        return QuickSort.array;
     }
 
-    private static void fastSort(int start, int end) {
-        if (start >= end) return;
-        int i = start, j = end;
+    private void quickSort(int start, int stop) {
+        if (start >= stop) return;
+        int i = start, j = stop;
         int cur = i - (i - j) / 2;
         while (i < j) {
-            while (i < cur && (array[i] <= array[cur])) {
+            while (i < cur && array[i] <= array[cur]) {
                 i++;
             }
-            while (j > cur && (array[cur] <= array[j])) {
+            while (j > cur && array[cur] <= array[j]) {
                 j--;
             }
             if (i < j) {
@@ -35,7 +34,7 @@ public class FastSort extends SortingAlgorithms {
                 }
             }
         }
-        fastSort(start, cur);
-        fastSort(cur + 1, end);
+        quickSort(start, cur);
+        quickSort(cur + 1, stop);
     }
 }
